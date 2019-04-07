@@ -1,0 +1,81 @@
+**Determining what to have for dinner**
+
+DEF WHATS_FOR_DINNER(what_im_in_mood_for, what_spouse_in_mood_for=nil)
+	SET cooking_style to baked
+	SET selected_menus to nil
+		IF the refrigerator contains at least one protein option AND at least one vegetable option THEN
+			SET protein_item to the first protein item found
+			SET vegetable_item to the first vegetable item found
+				UNLESS the temperature outside is less than 65 degrees OR it is raining THEN
+					ASSIGN grilled to cooking_style
+				ENDUNLESS
+			SET dinner_tonight to cooking_style plus protein_item plus vegetable_item
+		ELSE
+			OBTAIN folder of takeout menus located in menu drawer
+				FOR all menus in the folder
+					IF the current menu's restaurant is open for dinner AND it contains at least one menu item that equals what_im_in_mood_for THEN
+						ADD current menu to selected_menus
+					ENDIF
+				ENDFOR
+			UNLESS selected_menus is nil THEN
+				IF spouse_in_mood_for is not nil THEN
+					FOR all menus in selected_menus
+						IF the current menu contains a menu item that equals spouse_in_mood_for THEN
+							RETURN the current menu and SET dinner_tonight to the current_menu's restaurant
+						ENDIF
+					ENDFOR
+				ELSE
+					RETURN a random menu from selected_menus and SET dinner_tonight to that current_menu's restaurant
+				ENDIF
+			ELSE
+				dinner_tonight equals Dominos
+			ENDUNLESS
+		ENDIF
+	RETURN dinner_tonight
+END WHATS_FOR_DINNER
+
+
+**Deciding what to watch on TV**
+
+DEF WHAT_TO_WATCH(day, time)
+	IF day is equal to Sunday AND time is equal to 2100
+			ASSIGN to_watch to Game of Thrones
+	ELSIF day is equal to Sunday AND time is equal to 2300 THEN
+			ASSIGN to_watch to Last Week Tonight with John Oliver
+	ELSIF day is equal to a weekday AND time is equal to 1100 THEN
+			ASSIGN to_watch to The Price is Right
+	ELSIF day is equal to a weekday AND time is equal to 1700 THEN
+			ASSIGN to_watch to The Ellen Show
+	ELSIF day is equal to a weekday AND time is equal to 1930 THEN
+			ASSIGN to_watch to Jeopardy
+	ELSIF the DVR contains any content THEN
+			ASSIGN to_watch to DVR
+	ELSE
+		Log in to Netflix
+		SEARCH Netflix for a show with a name that equals The Office(U.S.)
+		ASSIGN to_watch to The Office(U.S.)
+	ENDIF
+	RETURN to_watch
+END DEF
+
+
+**Making plans for the weekend**
+
+DEF WEEKEND_PLANS(sat_date, sun_date)
+	IF I am scheduled to work on sat_date AND sun_date THEN
+		SET plans to "Too busy for weekend plans!"
+	ELSIF I am scheduled to work on sat_date but not scheduled to work on sun_date
+		IF outside temperature is greater than 60 degrees AND it is not raining
+			SET plans to "Sunday brunch"
+		ELSE
+			SET plans to "Sunday cleaning"
+		ENDIF
+	ELSIF I am not scheduled to work on sat_date but am scheduled to work on sun_date
+		IF outside temperature is greater than 70 degrees AND it is not raining
+			SET plans to "Saturday farmers market"
+		ELSE
+			SET plans to "Catch up on TV shows"
+		ENDIF
+	ENDIF
+	RETURN plans
+END DEF
