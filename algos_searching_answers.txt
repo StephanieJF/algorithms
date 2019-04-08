@@ -1,0 +1,39 @@
+1. Given the alphabetically sorted collection in this checkpoint, how many iterations would
+it take to find the value G using linear search?
+	Answer: 7
+
+2. Given the alphabetically sorted collection in this checkpoint, how many iterations would
+it take to find the value G using binary search?
+	Answer: 3
+
+3. Calculate fib(10), fib(11), fib(12) by hand.
+	fib(10)-> 34 + 21 = *55*
+	fib(11)-> 55 + 34 = *89*
+	fib(12)-> 89 + 55 = *144*
+
+	0  1  1  2  3  5  8  13  21  34  55  89		144
+	0	 1	2	 3  4  5  6   7  8   9  10   11   12
+
+-------------------------------------------------------------------------------------------------------------------
+
+Compare the time it takes to run fib(20) between the iterative solution from the previous checkpoint
+and recursive solutions.
+			Answer:
+								user     system      total        real
+					fib recursive   0.000000   0.000000   0.000000 (  0.001187)
+					fib iterative   0.000000   0.000000   0.000000 (  0.000008)
+
+1. Given an unsorted collection of a million items, which algorithm would you choose between
+linear search and binary search? Would you use an iterative or recursive solution? Explain your reasoning.
+		Answer: I would use a linear search because only linear searching can search through an
+		unsorted collection. I would use an iterative solution because although my benchmark data
+		appears to show recursion as the faster method, generally recursion is known to be slower and uses
+		more memory than iteration.
+
+2. Given a sorted collection of a million items, which algorithm would you choose between linear search and
+binary search? Would you use an iterative or recursive solution? Explain your reasoning.
+		Answer: I would use a binary recursive solution because with a very high number like a million,
+		linear search could potentially have to iterate over a million numbers, whereas binary searching
+		would have to iterate much less times. I would also use an iterative solution for the sorted
+		collection because although recursion is potentially easier to read and cleaner, it is known to be slower
+		and could use up a lot of memory with a million items.
