@@ -1,13 +1,20 @@
 def fib(n)
-  fib_0 = 0
+	fib_0 = 0
 	fib_1 = 1
-	for i in 0...n
+
+	if n==0
+		return 0
+	elsif n==1
+		return 1
+	end
+	
+	for i in 1...n
 		temp = fib_0
 		fib_0 = fib_1
 		fib_1 = temp + fib_1
 	end
 	return fib_1
- end
+end
 
  puts fib(0)
  puts fib(1)
