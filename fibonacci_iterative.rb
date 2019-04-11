@@ -7,7 +7,7 @@ def fib(n)
 	elsif n==1
 		return 1
 	end
-	
+
 	for i in 1...n
 		temp = fib_0
 		fib_0 = fib_1
