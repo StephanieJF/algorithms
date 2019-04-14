@@ -1,0 +1,15 @@
+# 		 user     system      total        real
+# quick sort    0.000000   0.000000   0.000000 (  0.000158)
+# heap sort     0.000000   0.000000   0.000000 (  0.000052)
+# bucket sort   0.000000   0.000000   0.000000 (  0.000037)
+
+Looking at the bar graph representation of the speed data of Quick Sort, Heap Sort, and Bucket Sort, I can speculate that
+the fastest method likely depends on the amount and type of data being sorted. However, I am not surprised that the Quick Sort
+method shows the fastest speed because it uses a divide-and-conquer approach to sorting the data, and also likely has to hold
+on to less information in memory as opposed to heap sort, for example.
+I would suspect the Bucket Sort to be the slowest, in the testing of an array with 50 random numbers because it requires many steps
+that may require holding on to more memory. For example, it has to start with an unsorted array, create the buckets, sometimes
+including empty buckets,  insert the items into the buckets, sort the buckets, then reinsert them into a fresh array.
+From a quick look, it is not a surprise that bucket sort may take longer to run than the Quick Sort method, leaving the Heap
+Sort method in the middle, with the step of creating a binary heap then placing the items into an array in sorted order based
+on the heap data. Again, these may not always run as the fastest and slowest methods, depending on other factors.
