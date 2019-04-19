@@ -1,0 +1,22 @@
+1. What's the Big-O of the following algorithm? Submit your work and reasoning with your solution.
+		- O(1) because this type of algorithm always takes the same amount of time to execute.
+
+2. What's the Big-O of the following algorithm? Submit your work and reasoning with your solution.
+		- O(n) because the algorithm does a linear search that has to iterate all the way to the end of the collection, so as
+		the size of the collection grows, the number of operations the function has to complete grows at the same rate. This would
+		be an example of a linear search.
+
+3. What's the Big-O of the following algorithm? Submit your work and reasoning with your solution.
+		- O(n^2) because as the program iterates through the outer array (n amount of times), it has to run through the inner array
+		n more amount of times. So the total number of operations it would have to complete is n*n.
+
+4. What's the Big-O of the following algorithm? Submit your work and reasoning with your solution.
+		-O(2^n) because this recursive function is called twice each n times (this is also a fibonacci function)
+
+5. What's the Big-O of the following algorithm? Submit your work and reasoning with your solution.
+		-O(n) because this is also just a linear search where it has to iterate n-1 times, so as the size of n grows, the number of
+		operations grows at the same rate.
+
+6. What's the Big-O of the following algorithm? Submit your work and reasoning with your solution.
+		-O(n^2) because, like a quick sort algorithm does, each item is being compared to an element, then each sub-collection
+		runs through the comparison steps again, which would be n times, then each again n times.
